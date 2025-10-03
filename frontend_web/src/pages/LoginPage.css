@@ -1,0 +1,150 @@
+/* Login page styles (single-column, centered) */
+:root{
+  --bg-solid: #1B2431; /* single background color */
+  --input-bg: #323D4E;
+  --input-border: rgba(207,207,207,0.11);
+  --accent: #00B69B;
+  --muted: #cfcfcf;
+  --white: #ffffff;
+  --font-family: 'Nunito Sans', sans-serif;
+}
+
+.login-container{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* make the container fill the viewport so the background is full-bleed */
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-solid);
+  color: var(--white);
+}
+
+.login-card{
+  width: 100%;
+  /* let the card scale larger on desktop but stay constrained on small screens */
+  max-width: 520px;
+  background: transparent;
+  padding: 28px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.login-header{
+  text-align: center;
+  margin-bottom: 18px;
+}
+.app-title{
+  color: #00d4aa;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+.page-title{
+  color: var(--white);
+  font-size: 28px;
+  margin: 0 0 6px 0;
+}
+.page-subtitle{
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch; /* allow children to stretch to container width */
+}
+
+.form-label{
+  align-self: flex-start;
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.text-input{
+  width: 100%;
+  max-width: 620px; /* keeps inputs from getting absurdly large on very wide screens */
+  height: 44px;
+  padding: 10px 16px;
+  border-radius: 22px;
+  border: 0.6px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--white);
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  margin: 0 auto; /* center when max-width applies */
+}
+
+.submit-button{
+  width: 140px;
+  max-width: 40%;
+  min-width: 110px;
+  height: 36px;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.create-account{
+  background: transparent;
+  color: var(--accent);
+  border: none;
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.error-box{
+  color: #ff6b6b;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(255, 107, 107, 0.08);
+  border-radius: 6px;
+  border: 1px solid rgba(255,107,107,0.2);
+  width: 100%;
+}
+
+.back-link{
+  display: inline-block;
+  position: fixed; /* keep it visible even when content scrolls */
+  top: 18px;
+  left: 18px;
+  z-index: 60;
+  background: none;
+  border: none;
+  color: #00d4aa;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background-color 150ms ease;
+}
+
+/* hover/focus states for better discoverability */
+.back-link:hover,
+.back-link:focus{
+  background-color: rgba(255,255,255,0.03);
+  outline: none;
+}

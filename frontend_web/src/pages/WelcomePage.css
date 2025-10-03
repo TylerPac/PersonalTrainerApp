@@ -1,0 +1,50 @@
+.welcome-container {
+	/* full-bleed background like the login page */
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	position: fixed;
+	inset: 0;
+	width: 100vw;
+	height: 100vh;
+	background: var(--bg-solid, #1B2431);
+	color: #fff;
+}
+
+.welcome-content {
+	max-width: 920px;
+	width: 100%;
+	text-align: center;
+	padding: 32px 0;
+}
+
+.welcome-hero { margin-bottom: 30px; }
+.welcome-title { font-size:20px; font-weight:700; color:#fff; margin-bottom:6px; }
+.welcome-subtitle { font-size:18px; color:#cfcfcf; margin-bottom:18px }
+
+.metrics-row{ display:flex; gap:18px; justify-content:center; align-items:flex-start; margin-bottom:28px }
+.metric-card{ background: #212833; padding:14px 18px; border-radius:10px; min-width:200px; box-shadow: 0 8px 20px rgba(3,9,16,0.6); border:1px solid rgba(255,255,255,0.03); color:#e8eef6 }
+.metric-title{ font-size:12px; color:#c6d2db; margin-bottom:8px }
+.metric-value{ font-size:18px; font-weight:700; color:#fff }
+.metric-sub{ font-size:12px; color:#9aa6b2 }
+.metric-chips{ display:flex; gap:8px }
+.chip{ background:#1f2a35; padding:8px 10px; border-radius:8px; font-size:12px; color:#a7bac6 }
+
+.plan-panel{ margin-top:18px; background:#22313b; border-radius:12px; padding:22px; box-shadow: 0 12px 30px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.03) }
+.plan-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px }
+.plan-title{ font-size:16px; font-weight:700; color:#e9f6ff }
+.plan-cta{ background:#2f7bd7; color:#fff; border:none; padding:8px 12px; border-radius:8px }
+
+.plan-table{ background: transparent; border-radius:8px; padding:8px }
+.plan-row{ display:grid; grid-template-columns: 2fr 0.7fr 0.7fr 2fr; gap:12px; padding:12px 10px; align-items:center; border-bottom:1px solid rgba(255,255,255,0.03) }
+.plan-row.header{ font-weight:700; color:#cfe8ff; border-bottom:1px solid rgba(255,255,255,0.06) }
+
+@media (max-width: 800px){
+	.metrics-row{ flex-direction:column; align-items:center }
+	.metric-card{ width:100%; max-width:360px }
+	.plan-row{ grid-template-columns: 1fr 0.8fr 0.8fr 1fr }
+}
+
+.welcome-actions{ display:flex; justify-content:center; align-items:center; gap:12px }

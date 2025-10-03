@@ -1,0 +1,4 @@
+.codacy/
+*.properties
+#Ignore vscode AI rules
+.vscode/
