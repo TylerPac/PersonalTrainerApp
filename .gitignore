@@ -2,3 +2,4 @@
 *.properties
 #Ignore vscode AI rules
 .vscode/
+.github/instructions/
