@@ -1,0 +1,264 @@
+/* Dashboard Content Styles */
+.dashboard-content {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "message stats"
+    "chart chart"
+    "actions actions";
+}
+
+/* Message Section */
+.message-section {
+  grid-area: message;
+}
+
+.message-card-dash {
+  background: #2a2a2a;
+  border-radius: 15px;
+  border: 1px solid #333;
+  padding: 20px;
+  height: 100%;
+}
+
+.message-card-dash h3 {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.message-content-dash {
+  background: #1a1a1a;
+  border-radius: 10px;
+  border: 1px solid #333;
+  padding: 15px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.message-content-dash p {
+  color: #ccc;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Stats Section */
+.stats-section {
+  grid-area: stats;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stat-card-dash {
+  background: #2a2a2a;
+  border-radius: 12px;
+  border: 1px solid #333;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.2s ease;
+}
+
+.stat-card-dash:hover {
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-label {
+  color: #ccc;
+  font-size: 12px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.stat-value {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Chart Section */
+.chart-section {
+  grid-area: chart;
+}
+
+.chart-card {
+  background: #2a2a2a;
+  border-radius: 15px;
+  border: 1px solid #333;
+  padding: 25px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.chart-header h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.chart-filter {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.chart-container {
+  height: 200px;
+  position: relative;
+}
+
+.chart-grid {
+  display: flex;
+  height: 100%;
+  align-items: end;
+}
+
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 40px;
+  padding-right: 10px;
+}
+
+.y-label {
+  color: #666;
+  font-size: 12px;
+  text-align: right;
+}
+
+.chart-bars {
+  flex: 1;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 60px;
+}
+
+.bar {
+  width: 30px;
+  min-height: 5px;
+  border-radius: 15px 15px 0 0;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.bar:hover {
+  opacity: 0.8;
+  transform: scaleY(1.05);
+}
+
+.bar-label {
+  color: #666;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Actions Section */
+.actions-section {
+  grid-area: actions;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.action-btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.action-btn.primary {
+  background: #00d4aa;
+  color: #1a1a1a;
+}
+
+.action-btn.primary:hover {
+  background: #00b894;
+  transform: translateY(-2px);
+}
+
+.action-btn.secondary {
+  background: transparent;
+  color: #00d4aa;
+  border: 2px solid #00d4aa;
+}
+
+.action-btn.secondary:hover {
+  background: rgba(0, 212, 170, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "message"
+      "stats"
+      "chart"
+      "actions";
+  }
+  
+  .stats-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}

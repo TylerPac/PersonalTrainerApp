@@ -1,0 +1,424 @@
+/* Nutrition Content Styles */
+.nutrition-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Nutrition Overview */
+.nutrition-overview {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 25px;
+}
+
+/* Calories Section */
+.calories-section-nutr {
+  background: #2a2a2a;
+  border-radius: 15px;
+  border: 1px solid #333;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calories-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calories-header h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.goal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.goal-label-nutr {
+  color: #ccc;
+  font-size: 12px;
+}
+
+.goal-value-nutr {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.calories-circle-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.calories-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.calories-current {
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.calories-remaining {
+  display: block;
+  color: #ccc;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.calories-breakdown {
+  width: 100%;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.breakdown-item:last-child {
+  border-bottom: none;
+}
+
+/* Macros Section */
+.macros-section-nutr {
+  background: #2a2a2a;
+  border-radius: 15px;
+  border: 1px solid #333;
+  padding: 25px;
+}
+
+.macros-card-nutr h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.macros-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.macro-item-nutr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.macro-circle-nutr {
+  transform: rotate(-90deg);
+}
+
+.macro-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.macro-label-nutr {
+  color: #ccc;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Meals Section */
+.meals-section-nutr {
+  background: #2a2a2a;
+  border-radius: 15px;
+  border: 1px solid #333;
+  padding: 25px;
+}
+
+.meals-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.meals-header h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.add-food-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #00d4aa;
+  color: #1a1a1a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-food-btn:hover {
+  background: #00b894;
+}
+
+.meals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.meal-card-nutr {
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 1px solid #333;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-card-nutr h4 {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.meal-targets {
+  flex: 1;
+  margin-bottom: 15px;
+}
+
+.target-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+}
+
+.target-row:last-child {
+  border-bottom: none;
+}
+
+.target-label {
+  color: #ccc;
+}
+
+.target-symbol {
+  color: #fff;
+  font-weight: 600;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+.target-range,
+.target-value {
+  color: #fff;
+  font-weight: 600;
+}
+
+.meal-ideas-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #4da6ff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.meal-ideas-btn:hover {
+  background: #3d8bff;
+}
+
+/* Food Log Section */
+.food-log-section {
+  background: #2a2a2a;
+  border-radius: 15px;
+  border: 1px solid #333;
+  padding: 25px;
+}
+
+.food-log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.food-log-header h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.log-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.quick-add-btn,
+.search-food-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.quick-add-btn {
+  background: transparent;
+  color: #00d4aa;
+  border: 1px solid #00d4aa;
+}
+
+.quick-add-btn:hover {
+  background: rgba(0, 212, 170, 0.1);
+}
+
+.search-food-btn {
+  background: #00d4aa;
+  color: #1a1a1a;
+}
+
+.search-food-btn:hover {
+  background: #00b894;
+}
+
+.food-log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.food-log-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  border: 1px solid #333;
+  transition: border-color 0.3s ease;
+}
+
+.food-log-item:hover {
+  border-color: #00d4aa;
+}
+
+.food-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.food-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.food-time {
+  color: #ccc;
+  font-size: 12px;
+}
+
+.food-calories {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.food-calories span {
+  color: #00d4aa;
+  font-weight: 600;
+}
+
+.edit-food-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.edit-food-btn:hover {
+  background: rgba(0, 212, 170, 0.1);
+}
+
+.food-log-total {
+  text-align: right;
+  padding-top: 15px;
+  border-top: 1px solid #333;
+  color: #00d4aa;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nutrition-overview {
+    grid-template-columns: 1fr;
+  }
+  
+  .meals-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .macros-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .meals-header,
+  .food-log-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+  
+  .log-actions {
+    justify-content: center;
+  }
+  
+  .macros-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+}

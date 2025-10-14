@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react'
 import WelcomePage from './pages/WelcomePage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
-import DashboardPage from './pages/DashboardPage'
+import Layout from './components/Layout'
+import DashboardContent from './components/DashboardContent'
+import WorkoutContent from './components/WorkoutContent'
+import NutritionContent from './components/NutritionContent'
 import AuthService from './services/AuthService'
 import './App.css'
 
@@ -105,10 +108,23 @@ function App() {
         )
       case 'dashboard':
         return (
-          <DashboardPage 
+          <Layout 
             currentUser={currentUser}
             onLogout={handleLogout}
-          />
+          >
+            {({ activeTab }) => {
+              switch (activeTab) {
+                case 'dashboard':
+                  return <DashboardContent currentUser={currentUser} />
+                case 'workout':
+                  return <WorkoutContent currentUser={currentUser} />
+                case 'nutrition':
+                  return <NutritionContent currentUser={currentUser} />
+                default:
+                  return <DashboardContent currentUser={currentUser} />
+              }
+            }}
+          </Layout>
         )
       default:
         return (

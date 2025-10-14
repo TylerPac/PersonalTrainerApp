@@ -3,35 +3,36 @@ import AuthService from '../services/AuthService';
 import './DashboardPage.css';
 
 const DashboardPage = ({ currentUser, onLogout }) => {
-  const [users, setUsers] = useState([]);
-  const [stats, setStats] = useState({
-    totalUsers: 0,
-    newUsersThisWeek: 0,
-    activeUsers: 0
+  // Mock data for now - will be replaced with real API calls later
+  const [workoutPlan] = useState({
+    title: "Today's Workout Plan: Leg Day",
+    exercises: [
+      { name: "Calf Raises", sets: 4, reps: 20, weight: 45, rest: "30 Secs", notes: "Each Set is per leg Make sure to squeeze at the top of each rep.", completed: false },
+      { name: "Calf Raises", sets: 4, reps: 20, weight: 45, rest: "30 Secs", notes: "Each Set is per leg Make sure to squeeze at the top of each rep.", completed: false },
+      { name: "Calf Raises", sets: 4, reps: 20, weight: 45, rest: "30 Secs", notes: "Each Set is per leg Make sure to squeeze at the top of each rep.", completed: false },
+      { name: "Calf Raises", sets: 4, reps: 20, weight: 45, rest: "30 Secs", notes: "Each Set is per leg Make sure to squeeze at the top of each rep.", completed: false },
+      { name: "Calf Raises", sets: 4, reps: 20, weight: 45, rest: "30 Secs", notes: "Each Set is per leg Make sure to squeeze at the top of each rep.", completed: false }
+    ]
   });
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
-  const fetchUsers = async () => {
-    try {
-      const data = await AuthService.getAllUsers();
-      setUsers(data);
-      
-      // Calculate stats
-      setStats({
-        totalUsers: data.length,
-        newUsersThisWeek: Math.floor(data.length * 0.2), // Mock calculation
-        activeUsers: Math.floor(data.length * 0.8) // Mock calculation
-      });
-    } catch (error) {
-      setError(error.message || 'Failed to fetch users');
-    } finally {
-      setLoading(false);
+  const [nutritionData] = useState({
+    calories: { current: 1600, goal: 2000, exercise: 600, remaining: 1000 },
+    macros: {
+      carbs: { current: 70, target: 30, color: "#ff6b6b" },
+      fats: { current: 70, target: 30, color: "#ffa500" },
+      protein: { current: 50, target: 40, color: "#00d4aa" },
+      water: { current: 60, target: 60, color: "#4da6ff" }
     }
+  });
+ 
+  const handleWorkoutComplete = (index) => {
+    // Logic to mark workout as complete will go here
+    console.log(`Exercise ${index} completed`);
+  };
+
+  const handleMealIdeas = (mealType) => {
+    // Logic to show meal ideas will go here
+    console.log(`Show meal ideas for ${mealType}`);
   };
 
   return (
@@ -55,342 +56,234 @@ const DashboardPage = ({ currentUser, onLogout }) => {
           </div>
         </div>
 
-        {/* Stats Cards */}
-        <div className="stats-grid">
-          <div className="stat-card">
-            <div style={{ fontSize: '2rem' }}>👥</div>
-            <div>
-              <div className="stat-number">{stats.totalUsers}</div>
-              <div style={{ color: '#ccc' }}>Total Users</div>
+        {/* Metrics Row */}
+        <div className="metrics-row">
+          {/* Calories Card */}
+          <div className="metric-card calories-card">
+            <div className="metric-header">
+              <h3>Calories</h3>
+              <span className="goal-label">Base Goal</span>
+              <span className="goal-value">{nutritionData.calories.goal}</span>
+            </div>
+            <div className="progress-circle-container">
+              <svg className="progress-circle" width="120" height="120">
+                <circle cx="60" cy="60" r="50" stroke="#333" strokeWidth="8" fill="none" />
+                <circle cx="60" cy="60" r="50" stroke="#00d4aa" strokeWidth="8" fill="none" 
+                        strokeDasharray={`${2 * Math.PI * 50}`} 
+                        strokeDashoffset={`${2 * Math.PI * 50 * (1 - (nutritionData.calories.current / nutritionData.calories.goal))}`}
+                        strokeLinecap="round" transform="rotate(-90 60 60)" />
+              </svg>
+              <div className="circle-text">
+                <span className="current-calories">{nutritionData.calories.current}</span>
+                <span className="remaining-text">remaining</span>
+              </div>
+            </div>
+            <div className="metric-details">
+              <div className="detail-row">
+                <span>Food</span>
+                <span>{nutritionData.calories.current}</span>
+              </div>
+              <div className="detail-row">
+                <span>Exercise</span>
+                <span>{nutritionData.calories.exercise}</span>
+              </div>
+              <div className="detail-row">
+                <span>Remaining</span>
+                <span>{nutritionData.calories.remaining}</span>
+              </div>
             </div>
           </div>
 
-          <div className="stat-card">
-            <div style={{ fontSize: '2rem' }}>🆕</div>
-            <div>
-              <div className="stat-number">{stats.newUsersThisWeek}</div>
-              <div style={{ color: '#ccc' }}>New This Week</div>
+          {/* Macros Cards */}
+          <div className="macros-container">
+            <h3>Macros</h3>
+            <div className="macro-circles">
+              <div className="macro-item">
+                <svg className="macro-circle" width="80" height="80">
+                  <circle cx="40" cy="40" r="30" stroke="#333" strokeWidth="6" fill="none" />
+                  <circle cx="40" cy="40" r="30" stroke={nutritionData.macros.carbs.color} strokeWidth="6" fill="none" 
+                          strokeDasharray={`${2 * Math.PI * 30}`} 
+                          strokeDashoffset={`${2 * Math.PI * 30 * (1 - (nutritionData.macros.carbs.current / 100))}`}
+                          strokeLinecap="round" transform="rotate(-90 40 40)" />
+                </svg>
+                <div className="macro-overlay-text">{nutritionData.macros.carbs.current}g</div>
+                <span className="macro-label">Carbs {nutritionData.macros.carbs.target}%</span>
+              </div>
+              <div className="macro-item">
+                <svg className="macro-circle" width="80" height="80">
+                  <circle cx="40" cy="40" r="30" stroke="#333" strokeWidth="6" fill="none" />
+                  <circle cx="40" cy="40" r="30" stroke={nutritionData.macros.fats.color} strokeWidth="6" fill="none" 
+                          strokeDasharray={`${2 * Math.PI * 30}`} 
+                          strokeDashoffset={`${2 * Math.PI * 30 * (1 - (nutritionData.macros.fats.current / 100))}`}
+                          strokeLinecap="round" transform="rotate(-90 40 40)" />
+                </svg>
+                <div className="macro-overlay-text">{nutritionData.macros.fats.current}g</div>
+                <span className="macro-label">Fats {nutritionData.macros.fats.target}%</span>
+              </div>
+              <div className="macro-item">
+                <svg className="macro-circle" width="80" height="80">
+                  <circle cx="40" cy="40" r="30" stroke="#333" strokeWidth="6" fill="none" />
+                  <circle cx="40" cy="40" r="30" stroke={nutritionData.macros.protein.color} strokeWidth="6" fill="none" 
+                          strokeDasharray={`${2 * Math.PI * 30}`} 
+                          strokeDashoffset={`${2 * Math.PI * 30 * (1 - (nutritionData.macros.protein.current / 100))}`}
+                          strokeLinecap="round" transform="rotate(-90 40 40)" />
+                </svg>
+                <div className="macro-overlay-text">{nutritionData.macros.protein.current}g</div>
+                <span className="macro-label">Protein {nutritionData.macros.protein.target}%</span>
+              </div>
+              <div className="macro-item">
+                <svg className="macro-circle" width="80" height="80">
+                  <circle cx="40" cy="40" r="30" stroke="#333" strokeWidth="6" fill="none" />
+                  <circle cx="40" cy="40" r="30" stroke={nutritionData.macros.water.color} strokeWidth="6" fill="none" 
+                          strokeDasharray={`${2 * Math.PI * 30}`} 
+                          strokeDashoffset={`${2 * Math.PI * 30 * (1 - (nutritionData.macros.water.current / 100))}`}
+                          strokeLinecap="round" transform="rotate(-90 40 40)" />
+                </svg>
+                <div className="macro-overlay-text">{nutritionData.macros.water.current}g</div>
+                <span className="macro-label">Water {nutritionData.macros.water.target}%</span>
+              </div>
             </div>
           </div>
 
-          <div className="stat-card">
-            <div style={{ fontSize: '2rem' }}>💪</div>
-            <div>
-              <div className="stat-number">{stats.activeUsers}</div>
-              <div style={{ color: '#ccc' }}>Active Users</div>
+          {/* Message Card */}
+          <div className="message-card">
+            <h3>Message from your trainer</h3>
+            <div className="message-content">
+              {/* Placeholder for trainer message */}
             </div>
           </div>
         </div>
 
-        {/* Users Table */}
-        <div className="table-section">
-          <div className="table-header">
-            <h2 style={{ color: '#fff', margin: 0 }}>All Users</h2>
-            <button className="refresh-btn" onClick={fetchUsers}>🔄 Refresh</button>
+        {/* Workout Plan Table */}
+        <div className="workout-section">
+          <div className="workout-header">
+            <h2>{workoutPlan.title}</h2>
+            <button className="feedback-btn">Feedback</button>
           </div>
-
-          {loading ? (
-            <div style={{ padding: 60, textAlign: 'center' }}>
-              <div style={{ width: 40, height: 40, border: '4px solid #333', borderTop: '4px solid #00d4aa', borderRadius: '50%', animation: 'spin 1s linear infinite', margin: '0 auto 20px' }}></div>
-              <p style={{ color: '#ccc' }}>Loading users...</p>
-            </div>
-          ) : error ? (
-            <div style={{ padding: 60, textAlign: 'center' }}>
-              <p style={{ color: '#ff6b6b' }}>{error}</p>
-              <button onClick={fetchUsers} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', background: '#00d4aa' }}>Try Again</button>
-            </div>
-          ) : users.length === 0 ? (
-            <div style={{ padding: 60, textAlign: 'center' }}>
-              <div style={{ fontSize: '3rem', marginBottom: 20 }}>📝</div>
-              <p style={{ color: '#ccc', fontSize: 18 }}>No users found</p>
-              <p style={{ color: '#666' }}>Users will appear here when they register</p>
-            </div>
-          ) : (
-            <div className="table-container">
-              <table className="table-styles">
-                <thead>
-                  <tr>
-                    <th className="th">ID</th>
-                    <th className="th">Avatar</th>
-                    <th className="th">Username</th>
-                    <th className="th">Email</th>
-                    <th className="th">Status</th>
+          
+          <div className="workout-table-container">
+            <table className="workout-table">
+              <thead>
+                <tr>
+                  <th>Exercise</th>
+                  <th>Sets</th>
+                  <th>Reps</th>
+                  <th>Weight</th>
+                  <th>Rest</th>
+                  <th>Notes</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {workoutPlan.exercises.map((exercise, index) => (
+                  <tr key={index}>
+                    <td>{exercise.name}</td>
+                    <td>{exercise.sets}</td>
+                    <td>{exercise.reps}</td>
+                    <td>{exercise.weight}</td>
+                    <td>{exercise.rest}</td>
+                    <td>{exercise.notes}</td>
+                    <td>
+                      <input 
+                        type="checkbox" 
+                        checked={exercise.completed}
+                        onChange={() => handleWorkoutComplete(index)}
+                      />
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {users.map((user) => (
-                    <tr key={user.id} style={{ borderBottom: '1px solid #333' }}>
-                      <td className="td">{user.id}</td>
-                      <td className="td">
-                        <div style={{ width: 32, height: 32, background: '#00d4aa', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1a1a1a', fontWeight: 700 }}>
-                          {user.username?.charAt(0)?.toUpperCase()}
-                        </div>
-                      </td>
-                      <td className="td">
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                          {user.username}
-                          {user.id === currentUser?.id && <span style={{ background: '#00d4aa', color: '#1a1a1a', fontSize: 10, fontWeight: 700, padding: '2px 6px', borderRadius: 10 }}>You</span>}
-                        </div>
-                      </td>
-                      <td className="td">{user.email}</td>
-                      <td className="td"><span style={{ background: 'rgba(0,212,170,0.2)', color: '#00d4aa', fontSize: 12, fontWeight: 700, padding: '4px 8px', borderRadius: 12, border: '1px solid #00d4aa' }}>Active</span></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Meal Planning Section */}
+        <div className="meals-section">
+          <div className="meal-cards">
+            <div className="meal-card">
+              <h3>Breakfast</h3>
+              <div className="meal-info">
+                <div className="meal-stat">
+                  <span className="label">Calories</span>
+                  <span className="range">400 - 500</span>
+                </div>
+                <div className="meal-stat">
+                  <span className="label">Protein</span>
+                  <span className="target">&gt;=</span>
+                  <span className="value">25g</span>
+                </div>
+                <div className="meal-stat">
+                  <span className="label">Carbs</span>
+                  <span className="range">-</span>
+                  <span className="value">40g</span>
+                </div>
+                <div className="meal-stat">
+                  <span className="label">Fats</span>
+                  <span className="target">&lt;=</span>
+                  <span className="value">12g</span>
+                </div>
+              </div>
+              <button className="meal-btn" onClick={() => handleMealIdeas('breakfast')}>Meal Ideas</button>
             </div>
-          )}
+
+            <div className="meal-card">
+              <h3>Lunch</h3>
+              <div className="meal-info">
+                <div className="meal-stat">
+                  <span className="label">Calories</span>
+                  <span className="range">400 - 500</span>
+                </div>
+                <div className="meal-stat">
+                  <span className="label">Protein</span>
+                  <span className="target">&gt;=</span>
+                  <span className="value">25g</span>
+                </div>
+                <div className="meal-stat">
+                  <span className="label">Carbs</span>
+                  <span className="range">-</span>
+                  <span className="value">40g</span>
+                </div>
+                <div className="meal-stat">
+                  <span className="label">Fats</span>
+                  <span className="target">&lt;=</span>
+                  <span className="value">12g</span>
+                </div>
+              </div>
+              <button className="meal-btn" onClick={() => handleMealIdeas('lunch')}>Meal Ideas</button>
+            </div>
+
+            <div className="meal-card">
+              <h3>Dinner</h3>
+              <div className="meal-info">
+                <div className="meal-stat">
+                  <span className="label">Calories</span>
+                  <span className="range">400 - 500</span>
+                </div>
+                <div className="meal-stat">
+                  <span className="label">Protein</span>
+                  <span className="target">&gt;=</span>
+                  <span className="value">25g</span>
+                </div>
+                <div className="meal-stat">
+                  <span className="label">Carbs</span>
+                  <span className="range">-</span>
+                  <span className="value">40g</span>
+                </div>
+                <div className="meal-stat">
+                  <span className="label">Fats</span>
+                  <span className="target">&lt;=</span>
+                  <span className="value">12g</span>
+                </div>
+              </div>
+              <button className="meal-btn" onClick={() => handleMealIdeas('dinner')}>Meal Ideas</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-const styles = {
-  container: {
-    minHeight: '100vh',
-    backgroundColor: '#1a1a1a',
-    color: '#fff',
-    padding: '20px'
-  },
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: '40px',
-    flexWrap: 'wrap',
-    gap: '20px'
-  },
-  headerLeft: {},
-  headerRight: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '20px'
-  },
-  title: {
-    color: '#00d4aa',
-    fontSize: '36px',
-    fontWeight: 'bold',
-    margin: '0 0 5px 0'
-  },
-  subtitle: {
-    color: '#ccc',
-    fontSize: '16px',
-    margin: 0
-  },
-  userInfo: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '12px',
-    backgroundColor: '#2a2a2a',
-    padding: '10px 15px',
-    borderRadius: '10px',
-    border: '1px solid #333'
-  },
-  avatar: {
-    width: '40px',
-    height: '40px',
-    backgroundColor: '#00d4aa',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#1a1a1a',
-    fontWeight: 'bold',
-    fontSize: '16px'
-  },
-  userName: {
-    color: '#fff',
-    fontSize: '14px',
-    fontWeight: 'bold'
-  },
-  userEmail: {
-    color: '#ccc',
-    fontSize: '12px'
-  },
-  logoutButton: {
-    padding: '10px 20px',
-    borderRadius: '8px',
-    border: 'none',
-    backgroundColor: '#ff6b6b',
-    color: '#fff',
-    fontSize: '14px',
-    cursor: 'pointer',
-    fontWeight: 'bold',
-    transition: 'all 0.3s ease'
-  },
-  statsGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-    gap: '20px',
-    marginBottom: '40px'
-  },
-  statCard: {
-    backgroundColor: '#2a2a2a',
-    padding: '25px',
-    borderRadius: '15px',
-    border: '1px solid #333',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '20px'
-  },
-  statIcon: {
-    fontSize: '2.5rem',
-    opacity: 0.8
-  },
-  statContent: {},
-  statNumber: {
-    fontSize: '2.5rem',
-    fontWeight: 'bold',
-    color: '#00d4aa',
-    lineHeight: 1
-  },
-  statLabel: {
-    color: '#ccc',
-    fontSize: '14px',
-    marginTop: '5px'
-  },
-  tableSection: {
-    backgroundColor: '#2a2a2a',
-    borderRadius: '15px',
-    border: '1px solid #333',
-    overflow: 'hidden'
-  },
-  tableHeader: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '25px',
-    borderBottom: '1px solid #333'
-  },
-  tableTitle: {
-    color: '#fff',
-    fontSize: '20px',
-    margin: 0
-  },
-  refreshButton: {
-    padding: '8px 16px',
-    borderRadius: '8px',
-    border: 'none',
-    backgroundColor: '#00d4aa',
-    color: '#1a1a1a',
-    fontSize: '14px',
-    cursor: 'pointer',
-    fontWeight: 'bold'
-  },
-  loadingState: {
-    padding: '60px',
-    textAlign: 'center'
-  },
-  spinner: {
-    width: '40px',
-    height: '40px',
-    border: '4px solid #333',
-    borderTop: '4px solid #00d4aa',
-    borderRadius: '50%',
-    animation: 'spin 1s linear infinite',
-    margin: '0 auto 20px'
-  },
-  loadingText: {
-    color: '#ccc',
-    fontSize: '16px'
-  },
-  errorState: {
-    padding: '60px',
-    textAlign: 'center'
-  },
-  errorText: {
-    color: '#ff6b6b',
-    fontSize: '16px',
-    marginBottom: '20px'
-  },
-  retryButton: {
-    padding: '10px 20px',
-    borderRadius: '8px',
-    border: 'none',
-    backgroundColor: '#00d4aa',
-    color: '#1a1a1a',
-    fontSize: '14px',
-    cursor: 'pointer',
-    fontWeight: 'bold'
-  },
-  emptyState: {
-    padding: '60px',
-    textAlign: 'center'
-  },
-  emptyIcon: {
-    fontSize: '3rem',
-    marginBottom: '20px'
-  },
-  emptyText: {
-    color: '#ccc',
-    fontSize: '18px',
-    marginBottom: '10px'
-  },
-  emptySubtext: {
-    color: '#666',
-    fontSize: '14px'
-  },
-  tableContainer: {
-    overflow: 'auto'
-  },
-  table: {
-    width: '100%',
-    borderCollapse: 'collapse'
-  },
-  headerRow: {
-    backgroundColor: '#333'
-  },
-  th: {
-    padding: '15px',
-    color: '#00d4aa',
-    fontWeight: 'bold',
-    textAlign: 'left',
-    borderBottom: '1px solid #444'
-  },
-  row: {
-    borderBottom: '1px solid #333',
-    transition: 'background-color 0.2s ease'
-  },
-  td: {
-    padding: '15px',
-    color: '#fff',
-    borderBottom: '1px solid #333'
-  },
-  userAvatar: {
-    width: '32px',
-    height: '32px',
-    backgroundColor: '#00d4aa',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#1a1a1a',
-    fontWeight: 'bold',
-    fontSize: '14px'
-  },
-  usernameCell: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px'
-  },
-  youBadge: {
-    backgroundColor: '#00d4aa',
-    color: '#1a1a1a',
-    fontSize: '10px',
-    fontWeight: 'bold',
-    padding: '2px 6px',
-    borderRadius: '10px'
-  },
-  statusBadge: {
-    backgroundColor: 'rgba(0, 212, 170, 0.2)',
-    color: '#00d4aa',
-    fontSize: '12px',
-    fontWeight: 'bold',
-    padding: '4px 8px',
-    borderRadius: '12px',
-    border: '1px solid #00d4aa'
-  }
-};
+
 
 export default DashboardPage;

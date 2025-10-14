@@ -1,22 +1,432 @@
 @import './LoginPage.css';
 
-.dashboard-container{ min-height:100vh; padding:20px; background: var(--bg-solid); color: var(--white); position:fixed; inset:0; width:100vw; height:100vh; display:flex; align-items:flex-start; justify-content:center }
-.dashboard-inner{ width:100%; max-width:1000px; padding:28px }
-.dashboard-header{ display:flex; justify-content:space-between; align-items:center; gap:20px; margin-bottom:40px; flex-wrap:wrap }
-.dashboard-title{ color:#00d4aa; font-size:28px; font-weight:700; margin:0 0 5px 0 }
-.dashboard-sub{ color:#ccc; font-size:16px; margin:0 }
-.user-info{ display:flex; align-items:center; gap:12px; background:#2a2a2a; padding:10px 15px; border-radius:10px; border:1px solid #333 }
-.avatar{ width:40px; height:40px; background:#00d4aa; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#1a1a1a; font-weight:700 }
-.logout-btn{ padding:10px 20px; border-radius:8px; border:none; background:#ff6b6b; color:#fff; font-weight:700; cursor:pointer }
-.stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-bottom:40px }
-.stat-card{ background:#2a2a2a; padding:25px; border-radius:15px; border:1px solid #333; display:flex; align-items:center; gap:20px }
-.stat-number{ font-size:2.5rem; font-weight:700; color:#00d4aa }
-.table-section{ background:#2a2a2a; border-radius:15px; border:1px solid #333; overflow:hidden }
-.table-header{ display:flex; justify-content:space-between; align-items:center; padding:25px; border-bottom:1px solid #333 }
-.refresh-btn{ padding:8px 16px; border-radius:8px; border:none; background:#00d4aa; color:#1a1a1a; font-weight:700 }
-.table-container{ overflow:auto }
-.table-styles{ width:100%; border-collapse:collapse }
-.th{ padding:15px; color:#00d4aa; font-weight:700; text-align:left; border-bottom:1px solid #444 }
-.td{ padding:15px; color:#fff; border-bottom:1px solid #333 }
+/* Base Dashboard Styles */
+.dashboard-container {
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--bg-solid);
+  color: var(--white);
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+}
 
-@keyframes spin { from { transform:rotate(0deg) } to { transform:rotate(360deg) } }
+.dashboard-inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 28px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.dashboard-title {
+  color: #00d4aa;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.dashboard-sub {
+  color: #ccc;
+  font-size: 16px;
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #273142;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #00d4aa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #ff6b6b;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Metrics Row */
+.metrics-row {
+  display: grid;
+  grid-template-columns: 320px 1fr 320px;
+  gap: 20px;
+  margin-bottom: 40px;
+  align-items: stretch;
+}
+
+/* Calories Card */
+.calories-card {
+  background: #273142;
+  border-radius: 15px;
+  border: 1px solid #333;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 300px;
+}
+
+.metric-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.metric-header h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+.goal-label {
+  color: #ccc;
+  font-size: 12px;
+  display: block;
+}
+
+.goal-value {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.progress-circle-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.progress-circle-container .circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.progress-circle-container .circle-text .current-calories {
+  font-size: 20px;
+  font-weight: 700;
+  display: block;
+}
+
+.progress-circle-container .circle-text .remaining-text {
+  font-size: 12px;
+  color: #ccc;
+  display: block;
+}
+
+.progress-circle {
+  transform: rotate(-90deg);
+}
+
+.metric-details {
+  width: 100%;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+/* Macros Container */
+.macros-container {
+  background: #273142;
+  border-radius: 15px;
+  border: 1px solid #333;
+  padding: 20px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.macros-container h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.macro-circles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  flex: 1;
+  align-items: center;
+  justify-items: center;
+}
+
+.macro-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.macro-circle {
+  transform: rotate(-90deg);
+}
+
+.macro-text {
+  fill: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.macro-item .macro-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+  margin-top: -15px; /* Adjust for label spacing */
+}
+
+.macro-label {
+  color: #ccc;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Message Card */
+.message-card {
+  background: #273142;
+  border-radius: 15px;
+  border: 1px solid #333;
+  padding: 20px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-card h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 0 20px 0;
+}
+
+.message-content {
+  flex: 1;
+  background: #1a1a1a;
+  border-radius: 10px;
+  border: 1px solid #333;
+  min-height: 200px;
+}
+
+/* Workout Section */
+.workout-section {
+  background: #273142;
+  border-radius: 15px;
+  border: 1px solid #333;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.workout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #333;
+}
+
+.workout-header h2 {
+  color: #fff;
+  font-size: 20px;
+  margin: 0;
+}
+
+.feedback-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #4da6ff;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.workout-table-container {
+  overflow-x: auto;
+}
+
+.workout-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.workout-table th {
+  padding: 15px;
+  color: #00d4aa;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 1px solid #444;
+  background: #273142;
+}
+
+.workout-table td {
+  padding: 15px;
+  color: #fff;
+  border-bottom: 1px solid #333;
+}
+
+.workout-table tr:hover {
+  background: rgba(0, 212, 170, 0.05);
+}
+
+.workout-table input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #00d4aa;
+}
+
+/* Meals Section */
+.meals-section {
+  margin-bottom: 30px;
+}
+
+.meal-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.meal-card {
+  background: #273142;
+  border-radius: 15px;
+  border: 1px solid #333;
+  padding: 20px;
+}
+
+.meal-card h3 {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.meal-info {
+  margin-bottom: 20px;
+}
+
+.meal-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+}
+
+.meal-stat:last-child {
+  border-bottom: none;
+}
+
+.meal-stat .label {
+  color: #ccc;
+}
+
+.meal-stat .target {
+  color: #fff;
+  font-weight: 700;
+}
+
+.meal-stat .range {
+  color: #fff;
+}
+
+.meal-stat .value {
+  color: #fff;
+  font-weight: 700;
+}
+
+.meal-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #4da6ff;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.meal-btn:hover {
+  background: #3d8bff;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .metrics-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .meal-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-inner {
+    padding: 20px;
+  }
+  
+  .macro-circles {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+  
+  .workout-table-container {
+    font-size: 12px;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
