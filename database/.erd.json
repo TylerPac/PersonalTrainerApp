@@ -1,0 +1,714 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dineug/erd-editor/main/json-schema/schema.json",
+  "version": "3.0.0",
+  "settings": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -175.2477,
+    "scrollLeft": -2,
+    "zoomLevel": 0.97,
+    "show": 511,
+    "database": 4,
+    "databaseName": "PersonalTrainerApp",
+    "canvasType": "ERD",
+    "language": 1,
+    "tableNameCase": 4,
+    "columnNameCase": 2,
+    "bracketType": 1,
+    "relationshipDataTypeSync": true,
+    "relationshipOptimization": false,
+    "columnOrder": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "maxWidthComment": -1,
+    "ignoreSaveSettings": 0
+  },
+  "doc": {
+    "tableIds": [
+      "Fitness",
+      "User",
+      "SkipUk9HKKPl708JER82x"
+    ],
+    "relationshipIds": [
+      "Fitness_User"
+    ],
+    "indexIds": [],
+    "memoIds": []
+  },
+  "collections": {
+    "tableEntities": {
+      "Fitness": {
+        "id": "Fitness",
+        "name": "Fitness",
+        "comment": "",
+        "columnIds": [
+          "id",
+          "calories",
+          "exerciseType",
+          "user_id"
+        ],
+        "seqColumnIds": [
+          "Q87aFrICikWHEGYYTqkKI",
+          "QRruAClod9_r7h4vZrowe"
+        ],
+        "ui": {
+          "x": 705.6413,
+          "y": 486.1312,
+          "zIndex": 2,
+          "widthName": 60,
+          "widthComment": 60,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1760847812705,
+          "createAt": 1760846843133
+        }
+      },
+      "User": {
+        "id": "User",
+        "name": "Users",
+        "comment": "Main User Login info ect",
+        "columnIds": [
+          "id",
+          "username",
+          "email",
+          "cQ3JZoFBqutpEfcj4ODFK"
+        ],
+        "seqColumnIds": [
+          "Z8mx4_2XxiPGJwq1BGUeL",
+          "kiO-Q3PQsJ8cRM1wCTLYF",
+          "cQ3JZoFBqutpEfcj4ODFK",
+          "UpN0VoisSZR4xmPCMYV_V",
+          "LXkUzSBQRSvvwymGxB2s4",
+          "RhKv4iOUoR0dMzA4SwPta",
+          "rLg9Edy7caVwVKMXKJOQW",
+          "DT8b7Ivab7oSzMOaImFDU"
+        ],
+        "ui": {
+          "x": 707.6564,
+          "y": 197.7956,
+          "zIndex": 2,
+          "widthName": 60,
+          "widthComment": 131,
+          "color": "#FF0000"
+        },
+        "meta": {
+          "updateAt": 1760847816686,
+          "createAt": 1760846843133
+        }
+      },
+      "V5P_kEGd_xyu1-9CfeEg1": {
+        "id": "V5P_kEGd_xyu1-9CfeEg1",
+        "name": "",
+        "comment": "",
+        "columnIds": [],
+        "seqColumnIds": [],
+        "ui": {
+          "x": 846.8085,
+          "y": 86.8795,
+          "zIndex": 6,
+          "widthName": 60,
+          "widthComment": 60,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1760847046176,
+          "createAt": 1760847043895
+        }
+      },
+      "SkipUk9HKKPl708JER82x": {
+        "id": "SkipUk9HKKPl708JER82x",
+        "name": "Workouts",
+        "comment": "Database for Workouts reusable for anyone",
+        "columnIds": [
+          "g8QVnAu7mtqP3hPDTUJ4_",
+          "Pe_23nRX5R3WJrA5XJ3Ik",
+          "6LX9hLV1h0vWjEAZXs0xb",
+          "httUqLqWmUz9UOkAWe2aV",
+          "XHvU1yxlmCj2mIRJLEUAn",
+          "Ms5m35g94vy35iyBv6w49"
+        ],
+        "seqColumnIds": [
+          "g8QVnAu7mtqP3hPDTUJ4_",
+          "Pe_23nRX5R3WJrA5XJ3Ik",
+          "6LX9hLV1h0vWjEAZXs0xb",
+          "OFHYtPrrj-At1Px50im_e",
+          "httUqLqWmUz9UOkAWe2aV",
+          "XHvU1yxlmCj2mIRJLEUAn",
+          "Ms5m35g94vy35iyBv6w49",
+          "deElhbOOsj0jv4mSALxhy"
+        ],
+        "ui": {
+          "x": 1146.1614,
+          "y": 489.244,
+          "zIndex": 124,
+          "widthName": 60,
+          "widthComment": 232,
+          "color": "#C2FF00"
+        },
+        "meta": {
+          "updateAt": 1760847786783,
+          "createAt": 1760847375274
+        }
+      }
+    },
+    "tableColumnEntities": {
+      "id": {
+        "id": "id",
+        "tableId": "Fitness",
+        "name": "id",
+        "comment": "",
+        "dataType": "Long",
+        "default": "",
+        "options": 11,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847414081,
+          "createAt": 1760846843133
+        }
+      },
+      "calories": {
+        "id": "calories",
+        "tableId": "Fitness",
+        "name": "calories",
+        "comment": "",
+        "dataType": "float",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847348543,
+          "createAt": 1760846843133
+        }
+      },
+      "exerciseType": {
+        "id": "exerciseType",
+        "tableId": "Fitness",
+        "name": "exerciseType",
+        "comment": "",
+        "dataType": "String",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 69,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760846843133,
+          "createAt": 1760846843133
+        }
+      },
+      "user_id": {
+        "id": "user_id",
+        "tableId": "Fitness",
+        "name": "user_id",
+        "comment": "",
+        "dataType": "Long",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760846843133,
+          "createAt": 1760846843133
+        }
+      },
+      "username": {
+        "id": "username",
+        "tableId": "User",
+        "name": "username",
+        "comment": "",
+        "dataType": "String",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847339839,
+          "createAt": 1760846843133
+        }
+      },
+      "email": {
+        "id": "email",
+        "tableId": "User",
+        "name": "email",
+        "comment": "",
+        "dataType": "String",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847339169,
+          "createAt": 1760846843133
+        }
+      },
+      "cQ3JZoFBqutpEfcj4ODFK": {
+        "id": "cQ3JZoFBqutpEfcj4ODFK",
+        "tableId": "User",
+        "name": "password",
+        "comment": "",
+        "dataType": "String",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847338552,
+          "createAt": 1760847082392
+        }
+      },
+      "UpN0VoisSZR4xmPCMYV_V": {
+        "id": "UpN0VoisSZR4xmPCMYV_V",
+        "tableId": "User",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847105457,
+          "createAt": 1760847105457
+        }
+      },
+      "LXkUzSBQRSvvwymGxB2s4": {
+        "id": "LXkUzSBQRSvvwymGxB2s4",
+        "tableId": "User",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847157675,
+          "createAt": 1760847157675
+        }
+      },
+      "RhKv4iOUoR0dMzA4SwPta": {
+        "id": "RhKv4iOUoR0dMzA4SwPta",
+        "tableId": "User",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847197758,
+          "createAt": 1760847197758
+        }
+      },
+      "Q87aFrICikWHEGYYTqkKI": {
+        "id": "Q87aFrICikWHEGYYTqkKI",
+        "tableId": "Fitness",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847298823,
+          "createAt": 1760847197956
+        }
+      },
+      "Z8mx4_2XxiPGJwq1BGUeL": {
+        "id": "Z8mx4_2XxiPGJwq1BGUeL",
+        "tableId": "User",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847198778,
+          "createAt": 1760847198778
+        }
+      },
+      "rLg9Edy7caVwVKMXKJOQW": {
+        "id": "rLg9Edy7caVwVKMXKJOQW",
+        "tableId": "User",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847261981,
+          "createAt": 1760847261981
+        }
+      },
+      "DT8b7Ivab7oSzMOaImFDU": {
+        "id": "DT8b7Ivab7oSzMOaImFDU",
+        "tableId": "User",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847272087,
+          "createAt": 1760847272087
+        }
+      },
+      "kiO-Q3PQsJ8cRM1wCTLYF": {
+        "id": "kiO-Q3PQsJ8cRM1wCTLYF",
+        "tableId": "User",
+        "name": "id",
+        "comment": "",
+        "dataType": "Long",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847315495,
+          "createAt": 1760847303339
+        }
+      },
+      "Pe_23nRX5R3WJrA5XJ3Ik": {
+        "id": "Pe_23nRX5R3WJrA5XJ3Ik",
+        "tableId": "SkipUk9HKKPl708JER82x",
+        "name": "WorkoutName",
+        "comment": "Name for workout",
+        "dataType": "String",
+        "default": "",
+        "options": 12,
+        "ui": {
+          "keys": 0,
+          "widthName": 79,
+          "widthComment": 99,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847614962,
+          "createAt": 1760847382701
+        }
+      },
+      "QRruAClod9_r7h4vZrowe": {
+        "id": "QRruAClod9_r7h4vZrowe",
+        "tableId": "Fitness",
+        "name": "id",
+        "comment": "",
+        "dataType": "Long",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847423701,
+          "createAt": 1760847423701
+        }
+      },
+      "6LX9hLV1h0vWjEAZXs0xb": {
+        "id": "6LX9hLV1h0vWjEAZXs0xb",
+        "tableId": "SkipUk9HKKPl708JER82x",
+        "name": "WorkoutType",
+        "comment": "(Legs, Abs, Chest, Shoulders, Back, Biceps, Cardio)",
+        "dataType": "String",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 73,
+          "widthComment": 264,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847652440,
+          "createAt": 1760847448205
+        }
+      },
+      "OFHYtPrrj-At1Px50im_e": {
+        "id": "OFHYtPrrj-At1Px50im_e",
+        "tableId": "SkipUk9HKKPl708JER82x",
+        "name": "Calories",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847489034,
+          "createAt": 1760847470722
+        }
+      },
+      "httUqLqWmUz9UOkAWe2aV": {
+        "id": "httUqLqWmUz9UOkAWe2aV",
+        "tableId": "SkipUk9HKKPl708JER82x",
+        "name": "Duration",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847668462,
+          "createAt": 1760847661227
+        }
+      },
+      "XHvU1yxlmCj2mIRJLEUAn": {
+        "id": "XHvU1yxlmCj2mIRJLEUAn",
+        "tableId": "SkipUk9HKKPl708JER82x",
+        "name": "Sets",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847676450,
+          "createAt": 1760847670432
+        }
+      },
+      "Ms5m35g94vy35iyBv6w49": {
+        "id": "Ms5m35g94vy35iyBv6w49",
+        "tableId": "SkipUk9HKKPl708JER82x",
+        "name": "Reps",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847679648,
+          "createAt": 1760847677318
+        }
+      },
+      "g8QVnAu7mtqP3hPDTUJ4_": {
+        "id": "g8QVnAu7mtqP3hPDTUJ4_",
+        "tableId": "SkipUk9HKKPl708JER82x",
+        "name": "id",
+        "comment": "",
+        "dataType": "Long",
+        "default": "",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847731297,
+          "createAt": 1760847721608
+        }
+      },
+      "deElhbOOsj0jv4mSALxhy": {
+        "id": "deElhbOOsj0jv4mSALxhy",
+        "tableId": "SkipUk9HKKPl708JER82x",
+        "name": "VideoLink",
+        "comment": "",
+        "dataType": "String",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760847775152,
+          "createAt": 1760847756353
+        }
+      }
+    },
+    "relationshipEntities": {
+      "Fitness_User": {
+        "id": "Fitness_User",
+        "identification": false,
+        "relationshipType": 4,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "",
+          "columnIds": [],
+          "x": 0,
+          "y": 0,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "",
+          "columnIds": [],
+          "x": 0,
+          "y": 0,
+          "direction": 8
+        },
+        "meta": {
+          "updateAt": 1760847033067,
+          "createAt": 1760847033067
+        }
+      },
+      "Gjt_xqvWe8mD3NEOrG6rd": {
+        "id": "Gjt_xqvWe8mD3NEOrG6rd",
+        "identification": false,
+        "relationshipType": 2,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "User",
+          "columnIds": [
+            "rLg9Edy7caVwVKMXKJOQW"
+          ],
+          "x": 1471.6357,
+          "y": 722.5378,
+          "direction": 4
+        },
+        "end": {
+          "tableId": "User",
+          "columnIds": [
+            "DT8b7Ivab7oSzMOaImFDU"
+          ],
+          "x": 1491.6357,
+          "y": 742.5378,
+          "direction": 2
+        },
+        "meta": {
+          "updateAt": 1760847272087,
+          "createAt": 1760847272087
+        }
+      }
+    },
+    "indexEntities": {
+      "5K7mNwpicr0NoH7N-q9JS": {
+        "id": "5K7mNwpicr0NoH7N-q9JS",
+        "name": "",
+        "tableId": "User",
+        "indexColumnIds": [],
+        "seqIndexColumnIds": [],
+        "unique": false,
+        "meta": {
+          "updateAt": 1760847146429,
+          "createAt": 1760847146429
+        }
+      }
+    },
+    "indexColumnEntities": {},
+    "memoEntities": {}
+  }
+}
