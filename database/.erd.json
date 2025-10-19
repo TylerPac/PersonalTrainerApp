@@ -4,8 +4,8 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -5,
-    "scrollLeft": 0,
+    "scrollTop": 0,
+    "scrollLeft": -40,
     "zoomLevel": 0.82,
     "show": 511,
     "database": 4,
@@ -35,7 +35,8 @@
       "SkipUk9HKKPl708JER82x",
       "3cet7mkYhfrwkfsJjqwrS",
       "jIV9vRKonsc3p3R0B4I9L",
-      "Xl4MXjLfM96BxNZPGQC3Z"
+      "Xl4MXjLfM96BxNZPGQC3Z",
+      "6IaUG3uOaHXdwX1qPAFUR"
     ],
     "relationshipIds": [],
     "indexIds": [],
@@ -142,12 +143,14 @@
         "columnIds": [
           "uIsHYNTrtbrRQCJI0cncZ",
           "httUqLqWmUz9UOkAWe2aV",
+          "3usn8fdUTwkP5C8q-J5pN",
           "XHvU1yxlmCj2mIRJLEUAn",
           "Ms5m35g94vy35iyBv6w49",
+          "BBCPu_YbHRTZewKUat9Ru",
           "g2_5m7JIQMPf2iN-fV9WC",
+          "MO7q4To2QYVM05q7pO96t",
           "2DOFZZFBsNvbFuT8sdFrM",
-          "VCsKJx9S0IJzZnh4J_mM7",
-          "MO7q4To2QYVM05q7pO96t"
+          "VCsKJx9S0IJzZnh4J_mM7"
         ],
         "seqColumnIds": [
           "g8QVnAu7mtqP3hPDTUJ4_",
@@ -156,25 +159,27 @@
           "OFHYtPrrj-At1Px50im_e",
           "uIsHYNTrtbrRQCJI0cncZ",
           "httUqLqWmUz9UOkAWe2aV",
+          "3usn8fdUTwkP5C8q-J5pN",
           "XHvU1yxlmCj2mIRJLEUAn",
           "Ms5m35g94vy35iyBv6w49",
+          "BBCPu_YbHRTZewKUat9Ru",
           "deElhbOOsj0jv4mSALxhy",
           "g2_5m7JIQMPf2iN-fV9WC",
+          "MO7q4To2QYVM05q7pO96t",
           "2DOFZZFBsNvbFuT8sdFrM",
           "VCsKJx9S0IJzZnh4J_mM7",
-          "MO7q4To2QYVM05q7pO96t",
           "jWLEN_juWnS8SNTv8EmAR"
         ],
         "ui": {
-          "x": 508.9283,
-          "y": 138.545,
+          "x": 501.6113,
+          "y": 134.8859,
           "zIndex": 124,
           "widthName": 60,
           "widthComment": 60,
           "color": "#C2FF00"
         },
         "meta": {
-          "updateAt": 1760884436008,
+          "updateAt": 1760885095961,
           "createAt": 1760847375274
         }
       },
@@ -258,30 +263,31 @@
       },
       "jIV9vRKonsc3p3R0B4I9L": {
         "id": "jIV9vRKonsc3p3R0B4I9L",
-        "name": "Trainers",
+        "name": "TrainerClients",
         "comment": "",
         "columnIds": [
+          "0ocE2vVHen57WItr5tyIR",
           "8RCAnWgY5cVTyUdIHaMq4",
           "2BzQJ8HEEKUZDnCW_Os-b",
-          "0MjYN3m0jBlwEJRgFOEbm",
-          "0ocE2vVHen57WItr5tyIR"
+          "0MjYN3m0jBlwEJRgFOEbm"
         ],
         "seqColumnIds": [
+          "0ocE2vVHen57WItr5tyIR",
           "8RCAnWgY5cVTyUdIHaMq4",
           "2BzQJ8HEEKUZDnCW_Os-b",
           "0MjYN3m0jBlwEJRgFOEbm",
-          "0ocE2vVHen57WItr5tyIR"
+          "yYxmZyOsa5AUmRaHjNDVz"
         ],
         "ui": {
           "x": 1013.4147,
           "y": 135.3658,
           "zIndex": 750,
-          "widthName": 60,
+          "widthName": 73,
           "widthComment": 60,
           "color": ""
         },
         "meta": {
-          "updateAt": 1760884417321,
+          "updateAt": 1760884682765,
           "createAt": 1760884083349
         }
       },
@@ -293,16 +299,16 @@
           "z2BMMfq4tZct8SIVGtQa9",
           "3-AobXrntwtMgBCIrp3ZQ",
           "gewKVnPbYplkicD8ml2AF",
-          "ApcD3U9jGFXkwwUkOAIK7",
           "TEk1QL9HvgZoEklikIS0F"
         ],
         "seqColumnIds": [
           "z2BMMfq4tZct8SIVGtQa9",
           "3-AobXrntwtMgBCIrp3ZQ",
           "gewKVnPbYplkicD8ml2AF",
+          "TEk1QL9HvgZoEklikIS0F",
           "ApcD3U9jGFXkwwUkOAIK7",
           "p-3A3NXNwBGHWL-O0T1YY",
-          "TEk1QL9HvgZoEklikIS0F"
+          "zUT8Jy6Qr-j6epAyLKtNf"
         ],
         "ui": {
           "x": 1463.4147,
@@ -313,8 +319,48 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1760884426653,
+          "updateAt": 1760885845908,
           "createAt": 1760884265993
+        }
+      },
+      "6IaUG3uOaHXdwX1qPAFUR": {
+        "id": "6IaUG3uOaHXdwX1qPAFUR",
+        "name": "AssignedWorkoutDetails ",
+        "comment": "",
+        "columnIds": [
+          "Wh0cYd6qVEBU-ImkmSjNR",
+          "x-OVNEx-Lqh2FYSFVtCqs",
+          "-FF2pCo6EIAaw2xfYXgqN",
+          "PGQXTK8pmArh7xgluoILS",
+          "19IiUvU5WtJQzGyi5w7jB",
+          "UQ1gQ0CXDyp_QqmrIdTrU",
+          "UVxJx5aVeCuJnNYUEzdTp",
+          "Lz8IV9qRny_WibRTJSGTf",
+          "cfymx4mpSH1sZ0aDBvdi9"
+        ],
+        "seqColumnIds": [
+          "Wh0cYd6qVEBU-ImkmSjNR",
+          "x-OVNEx-Lqh2FYSFVtCqs",
+          "-FF2pCo6EIAaw2xfYXgqN",
+          "PGQXTK8pmArh7xgluoILS",
+          "19IiUvU5WtJQzGyi5w7jB",
+          "UQ1gQ0CXDyp_QqmrIdTrU",
+          "UVxJx5aVeCuJnNYUEzdTp",
+          "Lz8IV9qRny_WibRTJSGTf",
+          "47LSH9ap21FDp8dowGRn9",
+          "cfymx4mpSH1sZ0aDBvdi9"
+        ],
+        "ui": {
+          "x": 1465.8537,
+          "y": 342.6829,
+          "zIndex": 900,
+          "widthName": 135,
+          "widthComment": 60,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1760885728775,
+          "createAt": 1760885007667
         }
       }
     },
@@ -344,7 +390,7 @@
         "tableId": "Fitness",
         "name": "description",
         "comment": "",
-        "dataType": "float",
+        "dataType": "TEXT",
         "default": "",
         "options": 8,
         "ui": {
@@ -355,27 +401,27 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760883040131,
+          "updateAt": 1760884707331,
           "createAt": 1760846843133
         }
       },
       "exerciseType": {
         "id": "exerciseType",
         "tableId": "Fitness",
-        "name": "excersizeName",
+        "name": "name",
         "comment": "",
         "dataType": "String",
         "default": "",
         "options": 0,
         "ui": {
           "keys": 0,
-          "widthName": 81,
+          "widthName": 60,
           "widthComment": 60,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760883899546,
+          "updateAt": 1760884698143,
           "createAt": 1760846843133
         }
       },
@@ -702,7 +748,7 @@
       "httUqLqWmUz9UOkAWe2aV": {
         "id": "httUqLqWmUz9UOkAWe2aV",
         "tableId": "SkipUk9HKKPl708JER82x",
-        "name": "Duration",
+        "name": "duration",
         "comment": "",
         "dataType": "",
         "default": "",
@@ -715,14 +761,14 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760847668462,
+          "updateAt": 1760884771232,
           "createAt": 1760847661227
         }
       },
       "XHvU1yxlmCj2mIRJLEUAn": {
         "id": "XHvU1yxlmCj2mIRJLEUAn",
         "tableId": "SkipUk9HKKPl708JER82x",
-        "name": "Sets",
+        "name": "sets",
         "comment": "",
         "dataType": "",
         "default": "",
@@ -735,14 +781,14 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760847676450,
+          "updateAt": 1760884773586,
           "createAt": 1760847670432
         }
       },
       "Ms5m35g94vy35iyBv6w49": {
         "id": "Ms5m35g94vy35iyBv6w49",
         "tableId": "SkipUk9HKKPl708JER82x",
-        "name": "Reps",
+        "name": "reps",
         "comment": "",
         "dataType": "",
         "default": "",
@@ -755,7 +801,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760847679648,
+          "updateAt": 1760884776099,
           "createAt": 1760847677318
         }
       },
@@ -902,7 +948,7 @@
       "g2_5m7JIQMPf2iN-fV9WC": {
         "id": "g2_5m7JIQMPf2iN-fV9WC",
         "tableId": "SkipUk9HKKPl708JER82x",
-        "name": "Notes",
+        "name": "notes",
         "comment": "",
         "dataType": "TEXT",
         "default": "",
@@ -915,7 +961,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760848205639,
+          "updateAt": 1760884779928,
           "createAt": 1760848192013
         }
       },
@@ -943,7 +989,7 @@
         "id": "2DOFZZFBsNvbFuT8sdFrM",
         "tableId": "SkipUk9HKKPl708JER82x",
         "name": "userID",
-        "comment": "",
+        "comment": "FK",
         "dataType": "",
         "default": "",
         "options": 8,
@@ -955,7 +1001,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760883990545,
+          "updateAt": 1760884754857,
           "createAt": 1760883081427
         }
       },
@@ -963,7 +1009,7 @@
         "id": "VCsKJx9S0IJzZnh4J_mM7",
         "tableId": "SkipUk9HKKPl708JER82x",
         "name": "excersizeID",
-        "comment": "",
+        "comment": "FK",
         "dataType": "",
         "default": "",
         "options": 8,
@@ -975,7 +1021,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760883991731,
+          "updateAt": 1760884757230,
           "createAt": 1760883088248
         }
       },
@@ -1182,20 +1228,20 @@
       "lt_vRQoMutGwAkfB8z8d3": {
         "id": "lt_vRQoMutGwAkfB8z8d3",
         "tableId": "3cet7mkYhfrwkfsJjqwrS",
-        "name": "isTrainer",
-        "comment": "",
-        "dataType": "BOOLEAN",
-        "default": "",
-        "options": 0,
+        "name": "role ",
+        "comment": "trainer client",
+        "dataType": "ENUM",
+        "default": "client",
+        "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
-          "widthComment": 60,
+          "widthComment": 68,
           "widthDataType": 60,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760883921220,
+          "updateAt": 1760884558924,
           "createAt": 1760883828097
         }
       },
@@ -1262,7 +1308,7 @@
       "MO7q4To2QYVM05q7pO96t": {
         "id": "MO7q4To2QYVM05q7pO96t",
         "tableId": "SkipUk9HKKPl708JER82x",
-        "name": "Status",
+        "name": "status",
         "comment": "skip pending completed",
         "dataType": "ENUM",
         "default": "",
@@ -1275,7 +1321,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760884414932,
+          "updateAt": 1760885620506,
           "createAt": 1760884020589
         }
       },
@@ -1303,7 +1349,7 @@
         "id": "8RCAnWgY5cVTyUdIHaMq4",
         "tableId": "jIV9vRKonsc3p3R0B4I9L",
         "name": "trainerID",
-        "comment": "",
+        "comment": "FK",
         "dataType": "",
         "default": "",
         "options": 0,
@@ -1315,7 +1361,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760884099533,
+          "updateAt": 1760884677569,
           "createAt": 1760884094345
         }
       },
@@ -1323,7 +1369,7 @@
         "id": "2BzQJ8HEEKUZDnCW_Os-b",
         "tableId": "jIV9vRKonsc3p3R0B4I9L",
         "name": "userID",
-        "comment": "",
+        "comment": "FK",
         "dataType": "",
         "default": "",
         "options": 0,
@@ -1335,36 +1381,16 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760884107555,
+          "updateAt": 1760884674463,
           "createAt": 1760884101478
         }
       },
       "0MjYN3m0jBlwEJRgFOEbm": {
         "id": "0MjYN3m0jBlwEJRgFOEbm",
         "tableId": "jIV9vRKonsc3p3R0B4I9L",
-        "name": "ClientStartDate",
+        "name": "startDate",
         "comment": "",
         "dataType": "DATE",
-        "default": "",
-        "options": 0,
-        "ui": {
-          "keys": 0,
-          "widthName": 82,
-          "widthComment": 60,
-          "widthDataType": 60,
-          "widthDefault": 60
-        },
-        "meta": {
-          "updateAt": 1760884136050,
-          "createAt": 1760884109778
-        }
-      },
-      "0ocE2vVHen57WItr5tyIR": {
-        "id": "0ocE2vVHen57WItr5tyIR",
-        "tableId": "jIV9vRKonsc3p3R0B4I9L",
-        "name": "",
-        "comment": "",
-        "dataType": "",
         "default": "",
         "options": 0,
         "ui": {
@@ -1375,7 +1401,27 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760884138673,
+          "updateAt": 1760884636200,
+          "createAt": 1760884109778
+        }
+      },
+      "0ocE2vVHen57WItr5tyIR": {
+        "id": "0ocE2vVHen57WItr5tyIR",
+        "tableId": "jIV9vRKonsc3p3R0B4I9L",
+        "name": "trainerClientID",
+        "comment": "PK",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 78,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760884680191,
           "createAt": 1760884138673
         }
       },
@@ -1484,7 +1530,7 @@
         "tableId": "Xl4MXjLfM96BxNZPGQC3Z",
         "name": "assignedDate",
         "comment": "",
-        "dataType": "",
+        "dataType": "DATE",
         "default": "",
         "options": 0,
         "ui": {
@@ -1495,8 +1541,288 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1760884432311,
+          "updateAt": 1760885748757,
           "createAt": 1760884426653
+        }
+      },
+      "yYxmZyOsa5AUmRaHjNDVz": {
+        "id": "yYxmZyOsa5AUmRaHjNDVz",
+        "tableId": "jIV9vRKonsc3p3R0B4I9L",
+        "name": "",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760884642921,
+          "createAt": 1760884642921
+        }
+      },
+      "3usn8fdUTwkP5C8q-J5pN": {
+        "id": "3usn8fdUTwkP5C8q-J5pN",
+        "tableId": "SkipUk9HKKPl708JER82x",
+        "name": "weight",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760884886427,
+          "createAt": 1760884883625
+        }
+      },
+      "Wh0cYd6qVEBU-ImkmSjNR": {
+        "id": "Wh0cYd6qVEBU-ImkmSjNR",
+        "tableId": "6IaUG3uOaHXdwX1qPAFUR",
+        "name": "workoutDetailsID",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 93,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885699055,
+          "createAt": 1760885012848
+        }
+      },
+      "x-OVNEx-Lqh2FYSFVtCqs": {
+        "id": "x-OVNEx-Lqh2FYSFVtCqs",
+        "tableId": "6IaUG3uOaHXdwX1qPAFUR",
+        "name": "assignedWorkoutID",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 106,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885025179,
+          "createAt": 1760885020328
+        }
+      },
+      "-FF2pCo6EIAaw2xfYXgqN": {
+        "id": "-FF2pCo6EIAaw2xfYXgqN",
+        "tableId": "6IaUG3uOaHXdwX1qPAFUR",
+        "name": "exerciseID",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885029401,
+          "createAt": 1760885020465
+        }
+      },
+      "PGQXTK8pmArh7xgluoILS": {
+        "id": "PGQXTK8pmArh7xgluoILS",
+        "tableId": "6IaUG3uOaHXdwX1qPAFUR",
+        "name": "sets",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885035022,
+          "createAt": 1760885020603
+        }
+      },
+      "19IiUvU5WtJQzGyi5w7jB": {
+        "id": "19IiUvU5WtJQzGyi5w7jB",
+        "tableId": "6IaUG3uOaHXdwX1qPAFUR",
+        "name": "reps",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885038909,
+          "createAt": 1760885020751
+        }
+      },
+      "UQ1gQ0CXDyp_QqmrIdTrU": {
+        "id": "UQ1gQ0CXDyp_QqmrIdTrU",
+        "tableId": "6IaUG3uOaHXdwX1qPAFUR",
+        "name": "weight",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885045334,
+          "createAt": 1760885020872
+        }
+      },
+      "UVxJx5aVeCuJnNYUEzdTp": {
+        "id": "UVxJx5aVeCuJnNYUEzdTp",
+        "tableId": "6IaUG3uOaHXdwX1qPAFUR",
+        "name": "restTime",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885051525,
+          "createAt": 1760885050137
+        }
+      },
+      "Lz8IV9qRny_WibRTJSGTf": {
+        "id": "Lz8IV9qRny_WibRTJSGTf",
+        "tableId": "6IaUG3uOaHXdwX1qPAFUR",
+        "name": "notes",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885056918,
+          "createAt": 1760885055464
+        }
+      },
+      "BBCPu_YbHRTZewKUat9Ru": {
+        "id": "BBCPu_YbHRTZewKUat9Ru",
+        "tableId": "SkipUk9HKKPl708JER82x",
+        "name": "restTime",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885092847,
+          "createAt": 1760885087672
+        }
+      },
+      "47LSH9ap21FDp8dowGRn9": {
+        "id": "47LSH9ap21FDp8dowGRn9",
+        "tableId": "6IaUG3uOaHXdwX1qPAFUR",
+        "name": "status",
+        "comment": "",
+        "dataType": "ENUM",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885627693,
+          "createAt": 1760885623077
+        }
+      },
+      "zUT8Jy6Qr-j6epAyLKtNf": {
+        "id": "zUT8Jy6Qr-j6epAyLKtNf",
+        "tableId": "Xl4MXjLfM96BxNZPGQC3Z",
+        "name": "workoutDetailsID",
+        "comment": "",
+        "dataType": "",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 93,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885704209,
+          "createAt": 1760885703045
+        }
+      },
+      "cfymx4mpSH1sZ0aDBvdi9": {
+        "id": "cfymx4mpSH1sZ0aDBvdi9",
+        "tableId": "6IaUG3uOaHXdwX1qPAFUR",
+        "name": "status",
+        "comment": "skip pending completed",
+        "dataType": "ENUM",
+        "default": "pending ",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 130,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1760885741761,
+          "createAt": 1760885728775
         }
       }
     },
