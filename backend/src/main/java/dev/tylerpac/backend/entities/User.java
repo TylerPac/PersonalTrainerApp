@@ -3,6 +3,8 @@ package dev.tylerpac.backend.entities;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -21,15 +23,23 @@ public class User {
 
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private List<Nutrition> nutritionRecords;
-
-    
-    @OneToMany(mappedBy = "user")
-    private List<Fitness> fitnessRecords;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
 
-    //sets
+    @OneToMany(mappedBy = "trainer")
+    private List<TrainerClients> trainerClients;
+
+    @OneToMany(mappedBy = "assignedTo")
+    private List<AssignedWorkouts> assignedWorkouts;
+
+    // Enum for Role
+    public enum Role {
+        CLIENT,
+        TRAINER
+    }
+
+    // Setters
     public void setUsername(String username) {
         this.username = username;
     }
@@ -42,13 +52,17 @@ public class User {
     public void setId(Long id) {
         this.id = id;
     }
-    public void setNutritionRecords(List<Nutrition> nutritionRecords) {
-        this.nutritionRecords = nutritionRecords;
+    public void setRole(Role role) {
+        this.role = role;
     }
-    public void setFitnessRecords(List<Fitness> fitnessRecords) {
-        this.fitnessRecords = fitnessRecords;
+    public void setTrainerClients(List<TrainerClients> trainerClients) {
+        this.trainerClients = trainerClients;
     }
-    //gets
+    public void setAssignedWorkouts(List<AssignedWorkouts> assignedWorkouts) {
+        this.assignedWorkouts = assignedWorkouts;
+    }
+
+    // Getters
     public String getUsername() {
         return username;
     }  
@@ -61,11 +75,13 @@ public class User {
     public Long getId() {
         return id;
     }
-    public List<Nutrition> getNutritionRecords() {
-        return nutritionRecords;
+    public Role getRole() {
+        return role;
     }
-    public List<Fitness> getFitnessRecords() {
-        return fitnessRecords;
+    public List<TrainerClients> getTrainerClients() {
+        return trainerClients;
     }
-    
+    public List<AssignedWorkouts> getAssignedWorkouts() {
+        return assignedWorkouts;
+    }
 }

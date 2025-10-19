@@ -4,9 +4,9 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -29.5588,
-    "scrollLeft": -188.8093,
-    "zoomLevel": 0.85,
+    "scrollTop": -99,
+    "scrollLeft": -105.3982,
+    "zoomLevel": 0.73,
     "show": 511,
     "database": 4,
     "databaseName": "PersonalTrainerApp",
@@ -71,15 +71,15 @@
           "p0GkuIBiKNTcWiY2P0101"
         ],
         "ui": {
-          "x": 1355.1477,
-          "y": 299.5788,
+          "x": 1445.5732,
+          "y": 590.0044,
           "zIndex": 2,
           "widthName": 60,
           "widthComment": 321,
           "color": ""
         },
         "meta": {
-          "updateAt": 1760911961611,
+          "updateAt": 1760912112068,
           "createAt": 1760846843133
         }
       },
@@ -377,15 +377,15 @@
           "BU45qdeUOPMvm7cCOS9rf"
         ],
         "ui": {
-          "x": 595.6446,
-          "y": 218.4655,
+          "x": 622.2403,
+          "y": 507.8272,
           "zIndex": 900,
           "widthName": 135,
           "widthComment": 245,
           "color": ""
         },
         "meta": {
-          "updateAt": 1760911960294,
+          "updateAt": 1760912108497,
           "createAt": 1760885007667
         }
       }
@@ -2395,8 +2395,8 @@
           "columnIds": [
             "ZW3XCJAC1mDQfkdba_Pui"
           ],
-          "x": 1355.1477,
-          "y": 375.5788,
+          "x": 1445.5732,
+          "y": 666.0044,
           "direction": 1
         },
         "end": {
@@ -2404,8 +2404,8 @@
           "columnIds": [
             "jLbi01lRlC1zj49S5qgRs"
           ],
-          "x": 1129.6446,
-          "y": 378.4655,
+          "x": 1156.2403,
+          "y": 667.8272,
           "direction": 2
         },
         "meta": {
@@ -2432,8 +2432,8 @@
           "columnIds": [
             "2H8HdPn_czSk7qXHsGbrw"
           ],
-          "x": 595.6446,
-          "y": 378.4655,
+          "x": 622.2403,
+          "y": 667.8272,
           "direction": 1
         },
         "meta": {
